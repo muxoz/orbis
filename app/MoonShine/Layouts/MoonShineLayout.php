@@ -4,8 +4,10 @@ declare(strict_types=1);
 
 namespace App\MoonShine\Layouts;
 
+use App\MoonShine\Pages\POS;
 use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\ProductResource;
+use App\MoonShine\Resources\SaleResource;
 use App\MoonShine\Resources\SupplierResource;
 use MoonShine\ColorManager\ColorManager;
 use MoonShine\Contracts\ColorManager\ColorManagerContract;
@@ -69,7 +71,12 @@ final class MoonShineLayout extends AppLayout
                 MenuItem::make('Categorías', CategoryResource::class),
                 MenuItem::make('Proveedores', SupplierResource::class),
                 MenuItem::make('Productos', ProductResource::class),
-            ], 's.archive-box')
+            ], 's.archive-box'),
+
+            MenuGroup::make('Caja', [
+                MenuItem::make('POS', POS::class),
+                MenuItem::make('Ventas', SaleResource::class),
+            ], 's.computer-desktop'),
 
         );
     }

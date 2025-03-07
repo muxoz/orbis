@@ -4,9 +4,11 @@ declare(strict_types=1);
 
 namespace App\Providers;
 
+use App\MoonShine\Pages\POS;
 use App\MoonShine\Resources\CategoryResource;
 use App\MoonShine\Resources\ImageResource;
 use App\MoonShine\Resources\ProductResource;
+use App\MoonShine\Resources\SaleResource;
 use App\MoonShine\Resources\SupplierResource;
 use App\Services\ThemeApplier;
 use Illuminate\Support\ServiceProvider;
@@ -44,9 +46,11 @@ class MoonShineServiceProvider extends ServiceProvider
                 SupplierResource::class,
                 ProductResource::class,
                 ImageResource::class,
+                SaleResource::class,
             ])
             ->pages([
                 ...$config->getPages(),
+                POS::class,
             ]);
     }
 }

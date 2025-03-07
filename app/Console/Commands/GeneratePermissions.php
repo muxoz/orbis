@@ -49,6 +49,10 @@ class GeneratePermissions extends Command
             'resourceName' => 'SupplierResource',
         ]);
 
+        $this->call('moonshine-rbac:permissions', [
+            'resourceName' => 'SaleResource',
+        ]);
+
         $this->call('moonshine-rbac:role', [
             'name' => 'Super Admin',
             '--all-permissions' => true,

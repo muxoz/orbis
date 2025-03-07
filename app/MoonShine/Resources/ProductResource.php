@@ -39,6 +39,8 @@ class ProductResource extends ModelResource implements HasImportExportContract
 
     protected bool $isAsync = false;
 
+    protected string $column = 'name';
+
     protected bool $columnSelection = true;
 
     protected bool $errorsAbove = false;
