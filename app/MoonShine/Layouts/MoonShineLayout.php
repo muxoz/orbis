@@ -21,6 +21,7 @@ use Sweet1s\MoonshineRBAC\Components\MenuRBAC;
 use Sweet1s\MoonshineRBAC\Resource\PermissionResource;
 use Sweet1s\MoonshineRBAC\Resource\RoleResource;
 use Sweet1s\MoonshineRBAC\Resource\UserResource;
+use App\MoonShine\Resources\CustomerResource;
 
 final class MoonShineLayout extends AppLayout
 {
@@ -64,8 +65,8 @@ final class MoonShineLayout extends AppLayout
                 MenuItem::make('permissions', PermissionResource::class)
                     ->translatable('moonshine-rbac::ui')
                     ->icon('s.shield-check'),
-            ], 'm.cube')
-                ->translatable('moonshine::ui.resource'),
+
+            ], 'm.cube')->translatable('moonshine::ui.resource'),
 
             MenuGroup::make('Inventario', [
                 MenuItem::make('Categorías', CategoryResource::class),
@@ -77,6 +78,10 @@ final class MoonShineLayout extends AppLayout
                 MenuItem::make('POS', POS::class),
                 MenuItem::make('Ventas', SaleResource::class),
             ], 's.computer-desktop'),
+
+            MenuGroup::make('CRM', [
+                MenuItem::make('Clientes', CustomerResource::class),
+            ], 's.briefcase'),
 
         );
     }

@@ -30,7 +30,7 @@ use Sweet1s\MoonshineRBAC\Traits\WithRolePermissions;
  * @extends ModelResource<Product>
  */
 class ProductResource extends ModelResource implements HasImportExportContract
-{
+{   
     use ImportExportConcern, WithRolePermissions;
 
     protected string $model = Product::class;
@@ -44,6 +44,8 @@ class ProductResource extends ModelResource implements HasImportExportContract
     protected bool $columnSelection = true;
 
     protected bool $errorsAbove = false;
+
+    protected int $itemsPerPage = 15;
 
     protected array $with = ['image'];
 

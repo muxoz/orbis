@@ -20,6 +20,7 @@ use MoonShine\Laravel\DependencyInjection\MoonShineConfigurator;
 use Sweet1s\MoonshineRBAC\Resource\PermissionResource;
 use Sweet1s\MoonshineRBAC\Resource\RoleResource;
 use Sweet1s\MoonshineRBAC\Resource\UserResource;
+use App\MoonShine\Resources\CustomerResource;
 
 class MoonShineServiceProvider extends ServiceProvider
 {
@@ -47,6 +48,7 @@ class MoonShineServiceProvider extends ServiceProvider
                 ProductResource::class,
                 ImageResource::class,
                 SaleResource::class,
+                CustomerResource::class,
             ])
             ->pages([
                 ...$config->getPages(),

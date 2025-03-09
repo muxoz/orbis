@@ -233,10 +233,12 @@ class POS extends Page
             Flex::make([
                 ActionButton::make('Finalizar Venta')
                     ->method('finishSale')
+                    ->withConfirm()
                     ->primary(),
 
                 ActionButton::make('Cancelar Venta')
                     ->method('cancelSale')
+                    ->withConfirm()
                     ->error(),
             ])->justifyAlign('between'),
 
